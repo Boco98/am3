@@ -12,3 +12,4 @@ public class HelloWorldController {
     }
 }
 //mvn clean package
+//java -jar target/am3-0.0.1-SNAPSHOT.jar -pokretanje aplikacije
