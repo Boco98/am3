@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.unibl.etf.pisio.am3.repositories.UserDAO;
 
+import java.util.List;
+import org.unibl.etf.pisio.am3.models.User;
+
 @Service
 public class UserService {
     //slabije se koristi zbog java refleskije
@@ -14,5 +17,9 @@ public class UserService {
     //injectiona
     public UserService(UserDAO userDao){
         this.userDao = userDao;
+    }
+
+    public List<User> getAll(){
+        return userDao.getAll();
     }
 }
