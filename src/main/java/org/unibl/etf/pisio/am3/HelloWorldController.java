@@ -8,6 +8,7 @@ public class HelloWorldController {
 
     @GetMapping("/hello-world")
     public String helloWorld(){
-        return "Hello World from spring boot!";
+        return "Hello World from spring boot Bojaneee!";
     }
 }
+//mvn clean package
