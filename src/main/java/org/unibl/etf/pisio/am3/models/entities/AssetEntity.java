@@ -21,13 +21,16 @@ public class AssetEntity {
     @Basic
     @Column(name = "description", nullable = true, length = -1)
     private String description;
-    @ManyToOne
+    @ManyToOne(fetch =  FetchType.LAZY)
+    //fetch type nam govori kada ce se zapravo povuci lokacija prilikom dobavljanja iz baze
+    //zbog performansi uvijek je bolje da odlozimo dobavljanje
+    //kod one to many to nije potrebno jer je tamo vec taj podrazumjevani tip dohvacanja
     @JoinColumn(name = "location_id", referencedColumnName = "id", nullable = false)
     private LocationEntity location;
-    @ManyToOne
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "asset_type_id", referencedColumnName = "id", nullable = false)
     private AssetTypeEntity assetType;
-    @ManyToOne
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "asset_status_id", referencedColumnName = "id", nullable = false)
     private AssetStatusEntity assetStatus;
 
