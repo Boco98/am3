@@ -9,4 +9,6 @@ public interface AssetService {
 
     List<Asset> findAll();
     Asset findById(Integer id) throws NotFoundException;
+
+    List<Asset> getAllAssetsByLocationId(Integer id);
 }

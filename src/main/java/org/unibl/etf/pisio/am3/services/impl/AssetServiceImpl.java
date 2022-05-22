@@ -33,4 +33,10 @@ public class AssetServiceImpl implements AssetService {
     public Asset findById(Integer id) throws NotFoundException {
         return modelMapper.map(assetEntityRepository.findById(id).orElseThrow(NotFoundException::new),Asset.class);
     }
+
+    @Override
+    public List<Asset> getAllAssetsByLocationId(Integer id) {
+        return assetEntityRepository.getAllByLocation_Id(id).stream().map(a->modelMapper.map(a, Asset.class)).collect(Collectors.toList());
+    //NAPOMENA: ID LOKACIJE JE BITAN , A NE ID ASSETA
+    }
 }
