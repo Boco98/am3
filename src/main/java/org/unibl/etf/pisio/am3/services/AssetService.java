@@ -2,6 +2,7 @@ package org.unibl.etf.pisio.am3.services;
 
 import org.unibl.etf.pisio.am3.exceptions.NotFoundException;
 import org.unibl.etf.pisio.am3.models.Asset;
+import org.unibl.etf.pisio.am3.models.AssetRequest;
 
 import java.util.List;
 
@@ -11,4 +12,8 @@ public interface AssetService {
     Asset findById(Integer id) throws NotFoundException;
 
     List<Asset> getAllAssetsByLocationId(Integer id);
+
+    Asset insert(AssetRequest assetRequest) throws NotFoundException;
+    Asset update(Integer id, AssetRequest assetRequest) throws NotFoundException;
+    void delete(Integer id);
 }
